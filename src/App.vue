@@ -4,22 +4,23 @@
       <img src="/logo.svg" alt="logo" class="header-logo" />
       <h2>My Favorite Movies</h2>
     </header>
-    <!-- <div class="movies">
-      {{ movieStore.movies }}
-    </div> -->
-    <!-- <div class="tabs"> -->
-    <!-- <button :class="['btn', { btn_green: movieStore.activeTab === 1 }]"> -->
-    <!-- Favorite -->
-    <!-- </button> -->
-    <!-- <button :class="['btn', { btn_green: movieStore.activeTab === 2 }]"> -->
-    <!-- Search -->
-    <!-- </button> -->
-    <!-- </div> -->
-    <!-- <div class="movies" v-if="movieStore.activeTab === 1">
-      <h3>All Movies</h3> -->
-    <Movie v-for="movie of movieStore.movies" :key="movie.id" :movie="movie" />
-    <!-- </div> -->
-    <!-- <div class="search" v-else>Search</div> -->
+    <div class="tabs">
+      <button :class="['btn', { btn_green: movieStore.activeTab === 1 }]">
+        Favorite
+      </button>
+      <button :class="['btn', { btn_green: movieStore.activeTab === 2 }]">
+        Search
+      </button>
+    </div>
+    <div class="movies" v-if="movieStore.activeTab === 1">
+      <h3>All Movies</h3>
+      <Movie
+        v-for="movie of movieStore.movies"
+        :key="movie.id"
+        :movie="movie"
+      />
+    </div>
+    <div class="search" v-else>Search</div>
   </main>
 </template>
 
