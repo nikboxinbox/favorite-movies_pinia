@@ -16,12 +16,12 @@
           class="btn movie-buttons-delete"
           @click="movieStore.deleteMovie(movie.kinopoiskId)"
         >
-          >Delete
+          Delete
         </button>
       </div>
       <div class="movie-buttons" v-if="isSearch">
         <button
-          class="btn_green_search"
+          class="btn_green_add"
           @click="searchStore.addToUserMovies(movie)"
         >
           Add
@@ -88,6 +88,13 @@ const props = defineProps({
 .movie-buttons-watched {
   color: #fff;
   background: #1eb4c3;
+  border: none;
+  width: 100px;
+  height: 40px;
+  font-size: 14px;
+  margin: 0 10px;
+  border-radius: 10px;
+  cursor: pointer;
 }
 .movie-buttons-watched__icon {
   width: 15px;
@@ -96,9 +103,19 @@ const props = defineProps({
 .movie-buttons-delete {
   color: #fff;
   background: #ff2a2a;
+  border: none;
+  width: 100px;
+  height: 40px;
+  font-size: 14px;
+  margin: 0 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.btn:hover {
+  opacity: 0.7;
 }
 
-.btn_green_search {
+.btn_green_add {
   background: #37df5c;
   border: none;
   width: 100px;
@@ -108,5 +125,8 @@ const props = defineProps({
   border-radius: 10px;
   cursor: pointer;
   /* background: #efefef; */
+}
+.btn_green_add:hover {
+  opacity: 0.7;
 }
 </style>
