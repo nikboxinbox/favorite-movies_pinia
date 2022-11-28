@@ -23,24 +23,27 @@
         <h3>Watched Movies (count: {{ movieStore.watchedMovies.length }})</h3>
         <Movie
           v-for="movie of movieStore.watchedMovies"
-          :key="movie.id"
+          :key="movie.kinopoiskId"
           :movie="movie"
         />
       </div>
       <h3>All Movies (count: {{ movieStore.totalCountMovies }})</h3>
       <Movie
         v-for="movie of movieStore.movies"
-        :key="movie.id"
+        :key="movie.kinopoiskId"
         :movie="movie"
       />
     </div>
-    <div class="search" v-else>Search</div>
+    <div class="search" v-else>
+      <Search />
+    </div>
   </main>
 </template>
 
 <script setup>
 import { useMovieStore } from "./stores/MovieStore";
 import Movie from "./components/Movie.vue";
+import Search from "./components/Search.vue";
 
 const movieStore = useMovieStore();
 
