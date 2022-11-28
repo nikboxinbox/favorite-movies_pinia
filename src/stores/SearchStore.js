@@ -1,4 +1,5 @@
 import { defineStore } from "pinia";
+import { useMovieStore } from "./MovieStore";
 
 export const useSearchStore = defineStore("searchStore", {
   state: () => ({
@@ -22,6 +23,11 @@ export const useSearchStore = defineStore("searchStore", {
       console.log(data.items);
       this.movies = await data.items;
       this.loader = false;
+    },
+    addToUserMovies(obj) {
+      const movieStore = useMovieStore();
+      movieStore.movies.push({ ...obj, isWatched: false });
+      movieStore.activeTab = 1;
     },
   },
 });

@@ -20,7 +20,12 @@
         </button>
       </div>
       <div class="movie-buttons" v-if="isSearch">
-        <button class="btn_green_search">Add</button>
+        <button
+          class="btn_green_search"
+          @click="searchStore.addToUserMovies(movie)"
+        >
+          Add
+        </button>
       </div>
     </div>
   </div>
@@ -28,9 +33,10 @@
 
 <script setup>
 import { useMovieStore } from "../stores/MovieStore";
+import { useSearchStore } from "../stores/SearchStore";
 
 const movieStore = useMovieStore();
-
+const searchStore = useSearchStore();
 const props = defineProps({
   movie: {
     type: Object,

@@ -7,7 +7,7 @@
       v-model="searchMovie"
     />
   </form>
-  <pre class="ass">{{ searchStore.movies[0] }}</pre>
+  <!-- <pre class="ass">{{ searchStore.movies[0] }}</pre> -->
   <Loader v-if="searchStore.loader" />
   <div v-else>
     <Movie
