@@ -1,4 +1,5 @@
 import { defineStore } from "pinia";
+
 export const useMovieStore = defineStore("movieStore", {
   state: () => ({
     movies: [
@@ -23,4 +24,12 @@ export const useMovieStore = defineStore("movieStore", {
     ],
     activeTab: 1,
   }),
+  getters: {
+    watchedMovies() {
+      return this.movies.filter((el) => el.isWatched);
+    },
+    totalCountMovies() {
+      return this.movies.length;
+    },
+  },
 });
