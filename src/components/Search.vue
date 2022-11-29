@@ -22,11 +22,11 @@
 <script setup>
 import Loader from "../components/Loader.vue";
 import Movie from "../components/Movie.vue";
-// import { ref } from "vue";
+import { ref } from "vue";
 import { useSearchStore } from "../stores/SearchStore";
 
 const searchStore = useSearchStore();
-// const searchMovie = ref("");
+const searchMovie = ref("");
 </script>
 
 <style scoped>
